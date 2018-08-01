@@ -1,0 +1,9 @@
+h3.home-content {
+    font-size: 222%;
+    /*设置绝对路径*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*自适应*/
+    transform: translate(-50%,-50%);
+}

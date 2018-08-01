@@ -1,3 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    我的网站
+{% endblock %}
+
+{% block content %}
+    {% for blog in blogs %}
+        <a href="{% url 'blog_detail' blog.pk %}">
+            <h3>{{ blog.title }}</h3>
+        </a>
+        <p>{{ blog.content|truncatechars:30 }}</p>
+    {% empty %}
+        <p>－－暂无博客，敬请期待－－</p>
+    {% endfor %}
+    <p>一共有篇{{ blogs|length }}博客</p>
+{% endblock %}
+
+
+
+{#
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,3 +43,4 @@
     <p>一共有篇{{ blogs|length }}博客</p>
 </body>
 </html>
+#}
