@@ -8,6 +8,7 @@ def blog_list(request):
     context['blogs'] = Blog.objects.all()
     # blogs count
     context['blog_count'] = Blog.objects.all().count()
+    context['blog_types'] = BlogType.objects.all()
     return render_to_response('blog/blog_list.html', context)
 
 
